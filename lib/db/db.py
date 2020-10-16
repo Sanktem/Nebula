@@ -53,4 +53,5 @@ def with_commit(func):
         cur.execute(command, valueset)
         
     def scriptexec(command, *values):
+        with open(path, "r", encoding="utf-8") as scritpt:
             cur.executescript(sctipt.read())
