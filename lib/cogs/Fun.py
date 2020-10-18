@@ -15,7 +15,7 @@ class Fun(Cog):
         await ctx.send(f"{choice(('Hello', 'Hi', 'Hey'))} {ctx.author.mention}!") #reacts to "+hello"
         
     @command(name="dice", aliases=["roll"])
-    @cooldown(1, 30, BucketType.user) #1 is times till cooldown 30 is time in secounde cooldown for a user
+    #@cooldown(1, 30, BucketType.user) #1 is times till cooldown 30 is time in secounde cooldown for a user
     async def roll_dice(self, ctx, die_string: str):
         """Rolls Dice"""
         dice, value = (int (term) for term in die_string.split("d"))
@@ -46,7 +46,7 @@ class Fun(Cog):
         await ctx.send(message)
         
     @command(name="fact")
-    @cooldown(3, 60, BucketType.guild)
+    #@cooldown(3, 60, BucketType.guild)
     async def animal_fact(self, ctx, animal: str):
         """Gives you an Animal Fact"""
         if  (animal := animal.lower()) in ("dog", "cat", "panda", "fox", "bird", "koala"):
