@@ -31,7 +31,7 @@ class Fun(Cog):
     @command(name="slap", aliases=["hit"])
     async def slap_member(self, ctx, member: Member, *, reason: Optional[str] = ("being a twat")):
         """Slaps your friends"""
-        await ctx.send(f"{ctx.author.display_name} slapped {member.mention} for {reason}!")
+        await ctx.send(f"{ctx.author.display_name} slapped {member.mention} {reason}!")
         
     @slap_member.error
     async def slap_member_error(self, ctx, exc):

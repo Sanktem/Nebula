@@ -45,6 +45,7 @@ class Bot(BotBase):
         
     def setup(self): #setting up all of the cogs and saying they are ready
         for cog in COGS:
+            print(f" {cog}")
             self.load_extension(f"lib.cogs.{cog}")
             print(f" {cog} Cog Loaded")
             
@@ -118,8 +119,8 @@ class Bot(BotBase):
     async def on_ready(self): #When the bot comes online it will create a message
         if not self.ready:
             self.guild = self.get_guild(615291969874296945) #this is the server ID for the friend server
-            #self.stdout = self.get_channel(766485670091948052) #This is the test channel
-            self.stdout = self.get_channel(615291969886879977) #This is the genral channel
+            self.stdout = self.get_channel(766485670091948052) #This is the test channel
+            #self.stdout = self.get_channel(615291969886879977) #This is the genral channel
             self.scheduler.add_job(self.amongus_game, CronTrigger(day_of_week=6, hour=14, minute=55, second=0)) # how to set a timed message
             self.scheduler.start()
         
